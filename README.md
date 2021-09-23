@@ -26,7 +26,7 @@ To generate a metagraph, use `metagraph.py`.
 python3 metagraph.py [data] [density]
 ```
 - `[data]`: name of the dataset. The name should be the directory name of the dataset contained in the `./benchmarks` folder.
-- `[density]`: size of the metagraph
+- `[density]`: size of the metagraph.
 
 ### Performing Metagraph Learning
 
