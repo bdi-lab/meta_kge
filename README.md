@@ -1,10 +1,11 @@
-# Metagraph Learning
+# Knowledge Graph Embedding via Metagraph Learning
 
-This code is an implementation of the paper, Knowledge Graph Embedding via Metagraph Learning.
+This code is an implementation of the paper, [Knowledge Graph Embedding via Metagraph Learning (SIGIR'21)](https://dl.acm.org/doi/abs/10.1145/3404835.3463072).
 
 This code is based on the [OpenKE](http://openke.thunlp.org) implementation, which is an open toolkit for knowledge graph embedding.
 
-If you use this code, please cite our [paper](https://dl.acm.org/doi/abs/10.1145/3404835.3463072):
+When you use this code, please cite our [paper](https://dl.acm.org/doi/abs/10.1145/3404835.3463072):
+
 ```
 @inproceedings{chung-sigir2021,
   author = {Chung, Chanyoung and Whang, Joyce Jiyoung},
@@ -19,32 +20,32 @@ If you use this code, please cite our [paper](https://dl.acm.org/doi/abs/10.1145
 
 ### Building a Metagraph
 
-To generate a metagraph with respect to the original graph, use `metagraph.py`.
+To generate a metagraph, use `metagraph.py`.
 
 ```
 python3 metagraph.py [data] [density]
 ```
-`[data]`: name of the dataset (it should be same with the directory name of the dataset, contained in `./benchmarks` folder)
-`[density]`: size of the metagraph
+- `[data]`: name of the dataset. The name should be the directory name of the dataset contained in the `./benchmarks` folder.
+- `[density]`: size of the metagraph
 
 ### Performing Metagraph Learning
 
-To perform metagraph learning on certain dataset, use `meta_[model].py`.
+To perform metagraph learning using a particular knowledge graph embedding model on a designated dataset, use `meta_[model].py`.
 
 For `TransE`, use
 
 ```
-python3 meta_transe.py [data] [density] [alpha_meta] [margin_meta] [alpha] [margin]
+CUDA_VISIBLE_DEVICES=0 python3 meta_transe.py [data] [density] [alpha_meta] [margin_meta] [alpha] [margin]
 ```
 
 For `DistMult`, use
 
 ```
-python3 meta_distmult.py [data] [density] [alpha_meta] [regul_meta] [alpha] [regul]
+CUDA_VISIBLE_DEVICES=0 python3 meta_distmult.py [data] [density] [alpha_meta] [regul_meta] [alpha] [regul]
 ```
 
 For `RotatE`, use
 
 ```
-python3 meta_rotate.py [data] [density] [alpha_meta] [margin_meta] [adv_meta] [alpha] [margin] [adv]
+CUDA_VISIBLE_DEVICES=0 python3 meta_rotate.py [data] [density] [alpha_meta] [margin_meta] [adv_meta] [alpha] [margin] [adv]
 ```
