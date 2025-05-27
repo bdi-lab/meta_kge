@@ -49,3 +49,7 @@ For `RotatE`, use
 ```
 CUDA_VISIBLE_DEVICES=0 python3 meta_rotate.py [data] [density] [alpha_meta] [margin_meta] [adv_meta] [alpha] [margin] [adv]
 ```
+
+### License
+
+Our codes are released under the CC BY-NC-SA 4.0 license.
